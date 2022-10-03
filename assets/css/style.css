@@ -98,14 +98,40 @@ li {
 }
 
 /*for wrapper*/
-.wrapper {
+.wrapper,.wrapper-large {
   max-width: 1360px;
-  width: 86%; 
+  width: 72%; 
   margin: 0 auto;
 }
+
+.wrapper-large { width: 86%;}
+/*common styling*/
+* { 
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+.icon {
+  display: block;
+  font-family: 'FontAwesome';
+  font-weight: 900;
+  text-indent: -9999px;
+} 
 /*=================================
   Header styling starts here
 =================================*/
+header { padding: 30px 0;}
+
+.logo { 
+  font-family: 'Mystery Quest';
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.logo .icon::before {
+  float: right;
+  content: '\f6be';
+  text-indent: 0;
+}
 
 
 
