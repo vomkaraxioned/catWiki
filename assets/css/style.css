@@ -116,6 +116,17 @@ li {
   font-weight: 900;
   text-indent: -9999px;
 } 
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-section .search-field,.most-searched-breeds .discover-more,.most-searched-breeds .see-more,
+.most-searched-breeds .cat-breeds,.most-searched-breeds .cat-breed figure,.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items,footer .wrapper-large
+{ display:flex;}
+.hero-section .description::first-letter,.why-to-have-a-cat .cats-benefits .title::first-letter {text-transform: capitalize;}
 /*=================================
   Header styling starts here
 =================================*/
@@ -126,6 +137,7 @@ header { padding: 20px 0;}
   font-family: 'Mystery Quest';
   font-size: 24px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .logo .icon::before {
@@ -134,11 +146,6 @@ header { padding: 20px 0;}
   text-indent: 0;
 }
 
-
-
-
-
-
 /*=================================
   Header styling ends here
 =================================*/  
@@ -146,14 +153,226 @@ header { padding: 20px 0;}
 /*=================================
   main styling starts here
 =================================*/
+/* styling for homepage start here*/
+/*hero section start here*/
+.hero-section {
+  padding: 150px 0;
+  border-radius: 30px 30px 0 0;
+  background: url("../images/bg.jpg") center no-repeat;
+  background-size: cover;
+}
 
+.hero-section .introduction { 
+  width: 48%;
+  color: #fff;
+}
+.hero-section .logo { 
+  color: #fff;
+  font-size: 64px;
+}
 
+.hero-section .description {
+  padding-bottom: 30px;
+  font-size: 24px;
+  line-height: 1.2;
+}
 
+.hero-section .search-field { 
+  position: relative;
+  flex-direction: column;
+}
 
+.hero-section input[type=text] {
+  width: 90%;
+  padding: 15px 5%;
+  border: none;
+  border-radius: 50px;
+}
 
+.hero-section input[type=submit] { 
+  border: none;
+  background: transparent;
+}
 
+.hero-section  .search-btn { 
+  position: absolute;
+  right: 7%;
+  top: 35%;
+  font-family: 'FontAwesome';
+  font-weight: 900;
+}
+.hero-section .search-btn::before { 
+  color: #291507;
+  content: '\f002';
+}
+.hero-section input[type=text]:focus { outline: none;}
 
+.hero-section .suggestion {
+  max-height: 220px;
+  width:100%;
+  border-radius: 20px;
+  display: none;
+  overflow-y: scroll;
+  position: absolute;
+  top: 60px;
+  background: #fff;
+  flex-direction: column;
+}
 
+.hero-section .suggest { 
+  padding: 10px 7%;
+  color: #000;
+  text-transform: capitalize;
+}
+/*hero section end here*/
+
+/*most searched section start here*/
+.most-searched-breeds .wrapper-large {
+  padding: 80px 0;
+  border-radius: 0 0 20px 20px ;
+  background: #e3e1dc;
+}
+
+.most-searched-breeds .sub-title { 
+  color: #291507;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.most-searched-breeds .sub-title::after { 
+  width: 60px;
+  height: 3px;
+  margin-top: 7px;
+  border-radius: 50px;
+  display: block;
+  background: #4d270c;
+  content: '';
+}
+
+.most-searched-breeds .discover-more {  padding-bottom: 40px;}
+
+.most-searched-breeds .see-more { 
+  align-items: flex-end;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.most-searched-breeds .see-more a { 
+  color: #291507;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.6;
+  text-transform: capitalize;
+}
+.most-searched-breeds .see-more a::after,.why-to-have-a-cat .cats-benefits a::after {
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  font-weight: 900;
+  content: '\f178';
+}
+.most-searched-breeds .title { 
+  width: 60%;
+  color: #291507;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.most-searched-breeds .title span { text-transform: capitalize;}
+
+.most-searched-breeds .cat-breeds {
+  justify-content: space-between; 
+   gap: 2%;
+}
+
+.most-searched-breeds .cat-breed figure{
+  width: 220px;
+  height: 220px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+.most-searched-breeds .cat-breed figure:hover::before,.active-breed {
+  width: 35px;
+  height: 175px;
+  border-radius: 20px;
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  background: #dec68b;
+  content: '';
+  z-index: -1;
+}
+.most-searched-breeds .cat-breed img { border-radius: 20px;}
+
+.most-searched-breeds .cat-breed a {
+  margin-top: 20px; 
+  color: #291507;
+  font-size: 16px;
+}
+/*most searched section end here*/
+
+/*why-to-have-a-cat section start here*/
+.why-to-have-a-cat { padding: 120px 0;}
+
+.why-to-have-a-cat .wrapper { display: flex;}
+.why-to-have-a-cat .cats-benefits {
+  color: #291507;
+  flex-basis: 50%;
+  font-size: 18px;
+}
+.why-to-have-a-cat .cats-benefits .title { 
+  font-size: 48px;
+  font-weight: 700;
+}
+.why-to-have-a-cat .cats-benefits .title::before {
+  width:67px;
+  height: 3px;
+  border-radius: 20px;
+  display: block;
+  background-color: #4d270c;
+  content: '';
+}
+
+.why-to-have-a-cat .cats-benefits a{ 
+  color: #291507;
+  opacity: 0.6;
+  text-transform: capitalize;
+}
+
+.why-to-have-a-cat .cats-benefits .description { padding: 80px 0;}
+
+.why-to-have-a-cat .gallery { flex-basis: 50%;}
+
+.why-to-have-a-cat .gallery-item img{ 
+  height: 100%;
+  border-radius: 20px;
+}
+
+.why-to-have-a-cat .gallery-items { flex-direction: column;}
+
+.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items{
+  gap: 5%;  
+  justify-content: space-between;
+}
+
+.why-to-have-a-cat .gallery-item:nth-child(1) { 
+  width: 274px;
+  height: 167px;
+}
+
+.why-to-have-a-cat .gallery-item:nth-child(2) { 
+  width: 195px;
+  height: 293px;
+}
+
+.why-to-have-a-cat .gallery-item:nth-child(3) { 
+  width: 234px;
+  height: 386px;
+}
+
+/*why-to-have-a-cat section end here*/
+/* styling for homepage end here*/
 /*=================================
   main styling ends here
 =================================*/
@@ -162,7 +381,22 @@ header { padding: 20px 0;}
   footer styling starts here
 =================================*/ 
 
+footer .wrapper-large { 
+  padding: 25px 0;
+  border-radius: 20px 20px 0 0;
+  background: #000;
+  color: #fff;
+  gap:50%
+}
+footer .logo { padding-left: 7%;}
+footer .logo a { color: #fff;}
 
+.copyright { font-size: 18px;}
+
+.copyright span { 
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 
 
