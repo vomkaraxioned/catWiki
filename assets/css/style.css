@@ -184,10 +184,8 @@ header { padding: 20px 0;}
   background-size: cover;
 }
 
-.hero-section .introduction { 
-  width: 48%;
-  color: #fff;
-}
+.hero-section .introduction {  width: 48%;}
+
 .hero-section .logo { 
   color: #fff;
   font-size: 64px;
@@ -195,6 +193,7 @@ header { padding: 20px 0;}
 
 .hero-section .description {
   padding-bottom: 30px;
+  color: #fff;
   font-size: 24px;
   line-height: 1.2;
 }
@@ -599,8 +598,45 @@ footer .logo a { color: #fff;}
 .breed-photos .photo { flex-basis: 45%;}
 /* styling for description page end here*/
 
+/* styling for top10most page start here*/
+.top-searched-breeds,.top-searched-breeds .breed { align-items: center;}
+/* styling for top10most page end here*/
+
 /* styling for aboutcats page start here*/
 .reasons-to-have-cat .title { font-size: 34px;}
 /* styling for aboutcats page end here*/
 
+/* styling for footer start here*/
+footer .logo { padding: 0 0 20px 0;}
+
+footer .wrapper-large { 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright { position: relative;}
+/* styling for footer end here*/
 }  
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  .wrapper-large { width: 90%;}
+  .wrapper {  width: 85%;}
+/* styling for homepage start here*/
+.hero-section { padding: 30px 0;}
+.hero-section .introduction { width: 100%;}
+
+.hero-section .logo { font-size: 21px;}
+
+.hero-section .logo span{ display: none;}
+
+.hero-section .search-field { 
+  width: 40%;
+}
+
+.hero-section input[type=text]::placeholder { 
+  content: 'Search';
+}
+/* styling for homepage end here*/
+}
