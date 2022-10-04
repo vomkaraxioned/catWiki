@@ -99,7 +99,6 @@ li {
 
 /*for wrapper*/
 .wrapper,.wrapper-large {
-  max-width: 1360px;
   width: 72%; 
   margin: 0 auto;
 }
@@ -110,27 +109,43 @@ li {
   font-family: 'Montserrat';
   font-weight: 500;
 }
+
 .icon {
   display: inline-block;
   font-family: 'FontAwesome';
   font-weight: 900;
   text-indent: -9999px;
 } 
+
 img {
   width: 100%;
   height: auto;
   object-fit: cover;
   object-position: center;
 }
+
 .description { 
   color: #291507;
   font-size: 18px;
 }
+
+.logo a:hover,.breeds .cat-breed a:hover,
+.breeds .cat-breed a:hover,.most-searched-breeds .cat-breed a:hover {
+  color: #dec68b;
+  transition: all .3s;
+}
+
+.most-searched-breeds .see-more a:hover,.why-to-have-a-cat .cats-benefits a:hover { 
+  opacity: 1;
+  transition: all .3s;
+}
+
 .hero-section .search-field,.most-searched-breeds .discover-more,.most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,.most-searched-breeds .cat-breed figure,.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items,footer .wrapper-large,.cat-breed-info .breed-details,
 .cat-breed-info .wrapper ,.cat-breed-info .ratings,.cat-breed-info .detail,.breed-photos .photos,
 .top-searched-breeds,.top-searched-breeds .breed
 { display:flex;}
+
 .hero-section .description::first-letter,.title::first-letter,
 .description::first-letter ,.reasons-to-have-cat .reasons h3 ,
 .reasons-to-have-cat .reasons .description::first-letter{ text-transform: capitalize;}
@@ -350,7 +365,7 @@ header { padding: 20px 0;}
 
 .why-to-have-a-cat .cats-benefits .description { padding: 80px 0;}
 
-.why-to-have-a-cat .gallery { flex-basis: 50%;}
+.why-to-have-a-cat .gallery { flex-basis: 45%;}
 
 .why-to-have-a-cat .gallery-item img,.cat-breed-info figure img,.breed-photos .photo img,
 .most-searched-breeds .cat-breed img,.top-searched-breeds .breed figure img{ 
@@ -366,18 +381,18 @@ header { padding: 20px 0;}
 }
 
 .why-to-have-a-cat .gallery-items .gallery-item:nth-child(1) { 
-  width: 274px;
+ width: 100%;
   height: 167px;
 }
 
 .why-to-have-a-cat .gallery-items .gallery-item:nth-child(2) { 
-  width: 195px;
+  width: 70%;
   height: 293px;
- align-self: flex-end;
+  align-self: flex-end;
 }
 
 .why-to-have-a-cat .gallery .gallery-item { 
-  width: 234px;
+  width: 80%;
   height: 386px;
 }
 
@@ -394,7 +409,6 @@ header { padding: 20px 0;}
 }
 
 .cat-breed-info figure { 
-  width: 371px;
   height: 371px;
   position: relative;
   flex-basis: 40%;
@@ -490,10 +504,14 @@ header { padding: 20px 0;}
 }
 .top-searched-breeds .breed figure{ 
   height: 170px;
+  cursor: pointer;
  flex-basis: 20%;
 }
 
-.top-searched-breeds .breed .breed-info { flex-basis: 65%;}
+.top-searched-breeds .breed .breed-info { 
+  flex-basis: 65%;
+  cursor: pointer;
+}
 /* styling for top10most page end here */
 
 /* styling for aboutCats page start here */
@@ -548,6 +566,41 @@ footer .logo a { color: #fff;}
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
 
+/* styling for homepage start here*/
+.hero-section .introduction { width: 60%;}
 
+.most-searched-breeds .cat-breeds{ 
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.most-searched-breeds .cat-breed { 
+  margin: 0 0 40px 0;
+  flex-basis: 45%;
+}
+
+.why-to-have-a-cat .wrapper { flex-direction: column;}
+
+.why-to-have-a-cat .cats-benefits { padding-bottom: 60px;}
+
+/* styling for homepage end here*/
+
+/* styling for description page start here*/
+.cat-breed-info .wrapper { flex-direction: column;}
+
+.cat-breed-info figure { flex-basis: 0;}
+
+.cat-breed-info figure::before { left: -3%;}
+
+.cat-breed-info .cat-breed-details { padding: 60px 0;}
+
+.breed-photos .photos { justify-content: space-between;}
+
+.breed-photos .photo { flex-basis: 45%;}
+/* styling for description page end here*/
+
+/* styling for aboutcats page start here*/
+.reasons-to-have-cat .title { font-size: 34px;}
+/* styling for aboutcats page end here*/
 
 }  
