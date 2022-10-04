@@ -122,11 +122,18 @@ img {
   object-fit: cover;
   object-position: center;
 }
-
+.description { 
+  color: #291507;
+  font-size: 18px;
+}
 .hero-section .search-field,.most-searched-breeds .discover-more,.most-searched-breeds .see-more,
-.most-searched-breeds .cat-breeds,.most-searched-breeds .cat-breed figure,.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items,footer .wrapper-large
+.most-searched-breeds .cat-breeds,.most-searched-breeds .cat-breed figure,.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items,footer .wrapper-large,.cat-breed-info .breed-details,
+.cat-breed-info .wrapper ,.cat-breed-info .ratings,.cat-breed-info .detail,.breed-photos .photos,
+.top-searched-breeds,.top-searched-breeds .breed
 { display:flex;}
-.hero-section .description::first-letter,.why-to-have-a-cat .cats-benefits .title::first-letter{text-transform: capitalize;}
+.hero-section .description::first-letter,.title::first-letter,
+.description::first-letter ,.reasons-to-have-cat .reasons h3 ,
+.reasons-to-have-cat .reasons .description::first-letter{ text-transform: capitalize;}
 /*=================================
   Header styling starts here
 =================================*/
@@ -291,7 +298,7 @@ header { padding: 20px 0;}
   cursor: pointer;
   z-index: 1;
 }
-.most-searched-breeds .cat-breed figure:hover::before,.active-breed {
+.most-searched-breeds .cat-breed figure:hover::before,.active-breed::before,.cat-breed-info figure::before {
   width: 35px;
   height: 175px;
   border-radius: 20px;
@@ -303,7 +310,6 @@ header { padding: 20px 0;}
   content: '';
   z-index: -1;
 }
-.most-searched-breeds .cat-breed img { border-radius: 20px;}
 
 .most-searched-breeds .cat-breed a {
   margin-top: 20px; 
@@ -346,7 +352,8 @@ header { padding: 20px 0;}
 
 .why-to-have-a-cat .gallery { flex-basis: 50%;}
 
-.why-to-have-a-cat .gallery-item img{ 
+.why-to-have-a-cat .gallery-item img,.cat-breed-info figure img,.breed-photos .photo img,
+.most-searched-breeds .cat-breed img,.top-searched-breeds .breed figure img{ 
   height: 100%;
   border-radius: 20px;
 }
@@ -375,7 +382,130 @@ header { padding: 20px 0;}
 }
 
 /*why-to-have-a-cat section end here*/
+
 /* styling for homepage end here*/
+
+/* styling for description page start here*/
+
+/*  styling for cat-breed-info start here*/
+.cat-breed-info .wrapper { 
+  gap: 5%;
+  justify-content: space-between;
+}
+
+.cat-breed-info figure { 
+  width: 371px;
+  height: 371px;
+  position: relative;
+  flex-basis: 40%;
+  z-index: 1;
+}
+
+.cat-breed-info figure::before { 
+  height: 300px;
+  left: -5%;
+}
+
+.cat-breed-info .cat-breed-details { flex-basis: 55%;}
+
+.cat-breed-info  .title { 
+  padding-bottom: 20px;
+  color: #291507;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.cat-breed-info .breed-details { 
+  padding: 30px 0;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.cat-breed-info .detail { 
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.cat-breed-info .detail span { font-weight: 700;}
+
+.cat-breed-info .ratings { 
+  align-items: center;
+  gap: 2%;
+  justify-items: right;
+}
+
+.cat-breed-info .rate { 
+  width: 60px;
+  height: 12px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  text-indent: -9999px;
+}
+
+.rate-active { background: #544439;}
+
+/* styling for cat-breed-info end here*/
+
+/* styling for breed-photos start here */
+.breed-photos { padding: 120px 0;}
+
+.breed-photos .title { 
+  color: #291507;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.breed-photos .photos { 
+  padding: 30px 0;
+  flex-wrap: wrap;
+  gap: 4%;
+}
+
+.breed-photos .photo { 
+  flex-basis: 21%;
+  height: 278px;
+  margin-bottom: 40px;
+}
+/* styling for breed-photos end here */
+
+/* styling for description page end here*/
+
+/* styling for top10most page start here*/
+
+.top-most-searched-breeds .title,.top-searched-breeds .breed .breed-name,.reasons-to-have-cat .title  { 
+  padding: 20px 0;
+  color: #291507;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.top-searched-breeds,.reasons-to-have-cat .reasons {
+  padding: 40px 0;
+  flex-direction: column;
+}
+
+.top-searched-breeds .breed { 
+  margin-bottom: 50px;
+  gap: 5%;
+}
+.top-searched-breeds .breed figure{ 
+  height: 170px;
+ flex-basis: 20%;
+}
+
+.top-searched-breeds .breed .breed-info { flex-basis: 65%;}
+/* styling for top10most page end here */
+
+/* styling for aboutCats page start here */
+.reasons-to-have-cat .reasons h3 { 
+  padding: 7px 0;
+  color: #291507;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.reasons-to-have-cat .reason { padding: 10px 0;}
+/* styling for aboutCats page end here */
 /*=================================
   main styling ends here
 =================================*/
