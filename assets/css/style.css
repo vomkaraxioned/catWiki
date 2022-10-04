@@ -568,7 +568,7 @@ footer .logo a { color: #fff;}
 @media only screen and (max-width: 995px) {
 
 /* styling for homepage start here*/
-.hero-section .introduction { width: 60%;}
+.hero-section .introduction { width: 85%;}
 
 .most-searched-breeds .cat-breeds{ 
   flex-wrap: wrap;
@@ -617,9 +617,34 @@ footer .wrapper-large {
   align-items: center;
 }
 
-.copyright { position: relative;}
+.copyright { position: static;}
 /* styling for footer end here*/
 }  
+
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  /* styling for homepage start here*/
+  .most-searched-breeds .title  { 
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .most-searched-breeds .discover-more { flex-direction: column;}
+   /* styling for homepage end here*/
+
+    /* styling for description start here*/
+    .top-searched-breeds .breed { 
+      padding-bottom: 85px;
+      flex-direction: column;
+    }
+
+    .top-searched-breeds .breed figure { 
+      width: 300px;
+      height: 300px;
+      flex-basis: auto;
+    }
+     /* styling for description end here*/
+}
+
 
 /*media query for 540px starts here*/
 @media only screen and (max-width: 540px) {
@@ -629,16 +654,33 @@ footer .wrapper-large {
 .hero-section { padding: 30px 0;}
 .hero-section .introduction { width: 100%;}
 
-.hero-section .logo { font-size: 21px;}
+.hero-section .logo { 
+  padding-bottom: 15px;
+  font-size: 21px;
+}
 
 .hero-section .logo span{ display: none;}
 
-/* .hero-section .search-field { 
-  width: 40%;
-} */
-
 .hero-section .search-field { display: none;}
 
-.hero-section .search-field-btn { display: flex;}
+.hero-section .search-field-btn { 
+  width: 30%;
+  display: flex;
+}
+
+.hero-section .search-field-btn input[type=text]::placeholder { 
+  padding: 0 5%;
+  color: #000;
+  font-size: 18px;
+}
+
+.most-searched-breeds .cat-breed figure { height: 134px;}
+
+.why-to-have-a-cat .cats-benefits .description { padding:40px 0}
 /* styling for homepage end here*/
+}
+
+/*media query for 425px starts here*/
+@media only screen and (max-width: 540px) {
+
 }
