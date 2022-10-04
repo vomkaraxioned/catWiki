@@ -126,7 +126,7 @@ img {
 .hero-section .search-field,.most-searched-breeds .discover-more,.most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,.most-searched-breeds .cat-breed figure,.why-to-have-a-cat .gallery,.why-to-have-a-cat .gallery-items,footer .wrapper-large
 { display:flex;}
-.hero-section .description::first-letter,.why-to-have-a-cat .cats-benefits .title::first-letter {text-transform: capitalize;}
+.hero-section .description::first-letter,.why-to-have-a-cat .cats-benefits .title::first-letter{text-transform: capitalize;}
 /*=================================
   Header styling starts here
 =================================*/
@@ -279,13 +279,13 @@ header { padding: 20px 0;}
 
 .most-searched-breeds .title span { text-transform: capitalize;}
 
-.most-searched-breeds .cat-breeds {
-  justify-content: space-between; 
-   gap: 2%;
+.most-searched-breeds .cat-breed {
+  margin-right: 5%;
+  flex-basis: 25%;
 }
 
+.most-searched-breeds .cat-breed:last-child { margin-right: 0;}
 .most-searched-breeds .cat-breed figure{
-  width: 220px;
   height: 220px;
   position: relative;
   cursor: pointer;
@@ -318,13 +318,15 @@ header { padding: 20px 0;}
 .why-to-have-a-cat .wrapper { display: flex;}
 .why-to-have-a-cat .cats-benefits {
   color: #291507;
-  flex-basis: 50%;
+  flex-basis: 45%;
   font-size: 18px;
 }
+
 .why-to-have-a-cat .cats-benefits .title { 
   font-size: 48px;
   font-weight: 700;
 }
+
 .why-to-have-a-cat .cats-benefits .title::before {
   width:67px;
   height: 3px;
@@ -356,17 +358,18 @@ header { padding: 20px 0;}
   justify-content: space-between;
 }
 
-.why-to-have-a-cat .gallery-item:nth-child(1) { 
+.why-to-have-a-cat .gallery-items .gallery-item:nth-child(1) { 
   width: 274px;
   height: 167px;
 }
 
-.why-to-have-a-cat .gallery-item:nth-child(2) { 
+.why-to-have-a-cat .gallery-items .gallery-item:nth-child(2) { 
   width: 195px;
   height: 293px;
+ align-self: flex-end;
 }
 
-.why-to-have-a-cat .gallery-item:nth-child(3) { 
+.why-to-have-a-cat .gallery .gallery-item { 
   width: 234px;
   height: 386px;
 }
@@ -384,14 +387,19 @@ header { padding: 20px 0;}
 footer .wrapper-large { 
   padding: 25px 0;
   border-radius: 20px 20px 0 0;
+  position: relative;
   background: #000;
   color: #fff;
-  gap:50%
 }
+
 footer .logo { padding-left: 7%;}
 footer .logo a { color: #fff;}
 
-.copyright { font-size: 18px;}
+.copyright { 
+  position: absolute;
+  right: 4%;
+  font-size: 18px;
+}
 
 .copyright span { 
   font-weight: 700;
