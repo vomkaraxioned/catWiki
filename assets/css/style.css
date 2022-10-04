@@ -198,10 +198,12 @@ header { padding: 20px 0;}
   line-height: 1.2;
 }
 
-.hero-section .search-field { 
+.hero-section .search-field,.hero-section .search-field-btn { 
   position: relative;
   flex-direction: column;
 }
+
+.hero-section .search-field-btn { display: none;}
 
 .hero-section input[type=text] {
   width: 90%;
@@ -631,12 +633,12 @@ footer .wrapper-large {
 
 .hero-section .logo span{ display: none;}
 
-.hero-section .search-field { 
+/* .hero-section .search-field { 
   width: 40%;
-}
+} */
 
-.hero-section input[type=text]::placeholder { 
-  content: 'Search';
-}
+.hero-section .search-field { display: none;}
+
+.hero-section .search-field-btn { display: flex;}
 /* styling for homepage end here*/
 }
