@@ -203,9 +203,7 @@ li {
   margin: 0 auto;
 }
 
-.wrapper-large {
-  width: 86%;
-}
+.wrapper-large { width: 86%;}
 
 /*common styling*/
 * {
@@ -247,6 +245,8 @@ img {
 }
 
 .hero-section .search-field,
+.search-modal .search-field,
+.suggestion-active,
 .most-searched-breeds .discover-more,
 .most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,
@@ -260,25 +260,19 @@ footer .wrapper-large,
 .cat-breed-info .detail,
 .breed-photos .photos,
 .top-searched-breeds,
-.top-searched-breeds .breed {
-  display: flex;
-}
+.top-searched-breeds .breed { display: flex;}
 
 .hero-section .description::first-letter,
 .title::first-letter,
 .description::first-letter,
 .reasons-to-have-cat .reasons h3,
 .reasons-to-have-cat .reasons .description::first-letter,
-.why-to-have-a-cat .cats-benefits .title span {
-  text-transform: capitalize;
-}
+.why-to-have-a-cat .cats-benefits .title span { text-transform: capitalize;}
 
 /*=================================
   Header styling starts here
 =================================*/
-header {
-  padding: 20px 0;
-}
+header {  padding: 20px 0;}
 
 .logo a,
 .logo {
@@ -313,9 +307,7 @@ header {
   background-size: cover;
 }
 
-.hero-section .introduction {
-  width: 48%;
-}
+.hero-section .introduction {  width: 48%;}
 
 .hero-section .logo {
   color: #fff;
@@ -330,28 +322,30 @@ header {
 }
 
 .hero-section .search-field,
-.hero-section .search-field-btn {
+.hero-section .search-field-btn,
+.search-modal .search-field {
   position: relative;
   flex-direction: column;
 }
 
-.hero-section .search-field-btn {
-  display: none;
-}
+.hero-section .search-field-btn {  display: none;}
 
-.hero-section input[type=text] {
+.hero-section input[type=text],
+.search-modal input[type=text] {
   width: 90%;
   padding: 15px 5%;
   border: none;
   border-radius: 50px;
 }
 
-.hero-section input[type=submit] {
+.hero-section input[type=submit],
+.search-modal input[type=submit] {
   border: none;
   background: transparent;
 }
 
-.hero-section .search-btn {
+.hero-section .search-btn ,
+.search-modal .search-btn{
   position: absolute;
   right: 7%;
   top: 35%;
@@ -359,18 +353,20 @@ header {
   font-weight: 900;
 }
 
-.hero-section .search-btn::before {
+.hero-section .search-btn::before,
+.search-modal .search-btn::before {
   color: #291507;
   content: '\f002';
 }
 
-.hero-section input[type=text]:focus {
-  outline: none;
-}
+.hero-section input[type=text]:focus,
+.search-modal input[type=text]:focus {  outline: none;}
 
-.hero-section .suggestion {
+.hero-section .suggestion,
+.search-modal .suggestion {
   max-height: 220px;
   width: 100%;
+  padding: 20px 0;
   border-radius: 20px;
   display: none;
   overflow-y: scroll;
@@ -380,11 +376,16 @@ header {
   flex-direction: column;
 }
 
-.hero-section .suggest {
-  padding: 10px 7%;
+.hero-section .suggest,
+.search-modal .suggest {
+  padding: 15px 7%;
+  border-radius: 5px;
   color: #000;
   text-transform: capitalize;
 }
+
+.hero-section .suggest:hover,
+.search-modal .suggest:hover { background-color: #e0e0e0;}
 
 /*hero section end here*/
 
@@ -411,9 +412,7 @@ header {
   content: '';
 }
 
-.most-searched-breeds .discover-more {
-  padding: 40px 0;
-}
+.most-searched-breeds .discover-more {  padding: 40px 0;}
 
 .most-searched-breeds .see-more {
   align-items: flex-end;
@@ -444,18 +443,14 @@ header {
   font-weight: 700;
 }
 
-.most-searched-breeds .title span {
-  text-transform: capitalize;
-}
+.most-searched-breeds .title span {  text-transform: capitalize;}
 
 .most-searched-breeds .cat-breed {
   margin-right: 5%;
   flex-basis: 25%;
 }
 
-.most-searched-breeds .cat-breed:last-child {
-  margin-right: 0;
-}
+.most-searched-breeds .cat-breed:last-child {  margin-right: 0;}
 
 .most-searched-breeds .cat-breed figure {
   height: 220px;
@@ -488,13 +483,9 @@ header {
 /*most searched section end here*/
 
 /*why-to-have-a-cat section start here*/
-.why-to-have-a-cat {
-  padding: 120px 0;
-}
+.why-to-have-a-cat {  padding: 120px 0;}
 
-.why-to-have-a-cat .wrapper {
-  display: flex;
-}
+.why-to-have-a-cat .wrapper {  display: flex;}
 
 .why-to-have-a-cat .cats-benefits {
   color: #291507;
@@ -522,13 +513,9 @@ header {
   text-transform: capitalize;
 }
 
-.why-to-have-a-cat .cats-benefits .description {
-  padding: 80px 0;
-}
+.why-to-have-a-cat .cats-benefits .description {  padding: 80px 0;}
 
-.why-to-have-a-cat .gallery {
-  flex-basis: 45%;
-}
+.why-to-have-a-cat .gallery {  flex-basis: 45%;}
 
 .why-to-have-a-cat .gallery-item img,
 .cat-breed-info figure img,
@@ -539,9 +526,7 @@ header {
   border-radius: 20px;
 }
 
-.why-to-have-a-cat .gallery-items {
-  flex-direction: column;
-}
+.why-to-have-a-cat .gallery-items {  flex-direction: column;}
 
 .why-to-have-a-cat .gallery,
 .why-to-have-a-cat .gallery-items {
@@ -567,6 +552,8 @@ header {
 
 /*why-to-have-a-cat section end here*/
 
+.search-modal { display: none;}
+
 /* styling for homepage end here*/
 
 /* styling for description page start here*/
@@ -589,9 +576,7 @@ header {
   left: -5%;
 }
 
-.cat-breed-info .cat-breed-details {
-  flex-basis: 55%;
-}
+.cat-breed-info .cat-breed-details {  flex-basis: 55%;}
 
 .cat-breed-info .title {
   padding-bottom: 20px;
@@ -631,16 +616,12 @@ header {
   text-indent: -9999px;
 }
 
-.rate-active {
-  background: #544439;
-}
+.rate-active {  background: #544439;}
 
 /* styling for cat-breed-info end here*/
 
 /* styling for breed-photos start here */
-.breed-photos {
-  padding: 120px 0;
-}
+.breed-photos {  padding: 120px 0;}
 
 .breed-photos .title {
   color: #291507;
@@ -707,9 +688,7 @@ header {
   font-weight: 700;
 }
 
-.reasons-to-have-cat .reason {
-  padding: 10px 0;
-}
+.reasons-to-have-cat .reason {  padding: 10px 0;}
 
 /* styling for aboutCats page end here */
 /*=================================
@@ -728,13 +707,9 @@ footer .wrapper-large {
   color: #fff;
 }
 
-footer .logo {
-  padding-left: 7%;
-}
+footer .logo {  padding-left: 7%;}
 
-footer .logo a {
-  color: #fff;
-}
+footer .logo a {  color: #fff;}
 
 .copyright {
   position: absolute;
@@ -760,9 +735,7 @@ footer .logo a {
 @media only screen and (max-width: 995px) {
 
   /* styling for homepage start here*/
-  .hero-section .introduction {
-    width: 85%;
-  }
+  .hero-section .introduction {  width: 85%;}
 
   .most-searched-breeds .cat-breeds {
     flex-wrap: wrap;
@@ -774,62 +747,40 @@ footer .logo a {
     flex-basis: 45%;
   }
 
-  .why-to-have-a-cat .wrapper {
-    flex-direction: column;
-  }
+  .why-to-have-a-cat .wrapper {  flex-direction: column;}
 
-  .why-to-have-a-cat .cats-benefits {
-    padding-bottom: 60px;
-  }
+  .why-to-have-a-cat .cats-benefits {  padding-bottom: 60px;}
 
   /* styling for homepage end here*/
 
   /* styling for description page start here*/
-  .cat-breed-info .wrapper {
-    flex-direction: column;
-  }
+  .cat-breed-info .wrapper {  flex-direction: column;}
 
-  .cat-breed-info figure {
-    flex-basis: 0;
-  }
+  .cat-breed-info figure {  flex-basis: 0;}
 
-  .cat-breed-info figure::before {
-    left: -3%;
-  }
+  .cat-breed-info figure::before {  left: -3%;}
 
-  .cat-breed-info .cat-breed-details {
-    padding: 60px 0;
-  }
+  .cat-breed-info .cat-breed-details {  padding: 60px 0;}
 
-  .breed-photos .photos {
-    justify-content: space-between;
-  }
+  .breed-photos .photos {  justify-content: space-between;}
 
-  .breed-photos .photo {
-    flex-basis: 45%;
-  }
+  .breed-photos .photo {  flex-basis: 45%;}
 
   /* styling for description page end here*/
 
   /* styling for top10most page start here*/
   .top-searched-breeds,
-  .top-searched-breeds .breed {
-    align-items: center;
-  }
+  .top-searched-breeds .breed {  align-items: center;}
 
   /* styling for top10most page end here*/
 
   /* styling for aboutcats page start here*/
-  .reasons-to-have-cat .title {
-    font-size: 34px;
-  }
+  .reasons-to-have-cat .title {  font-size: 34px;}
 
   /* styling for aboutcats page end here*/
 
   /* styling for footer start here*/
-  footer .logo {
-    padding: 0 0 20px 0;
-  }
+  footer .logo {  padding: 0 0 20px 0;}
 
   footer .wrapper-large {
     align-items: center;
@@ -837,9 +788,7 @@ footer .logo a {
     justify-content: center;
   }
 
-  .copyright {
-    position: static;
-  }
+  .copyright {  position: static;}
 
   /* styling for footer end here*/
 }
@@ -853,9 +802,7 @@ footer .logo a {
     padding-bottom: 20px;
   }
 
-  .most-searched-breeds .discover-more {
-    flex-direction: column;
-  }
+  .most-searched-breeds .discover-more {  flex-direction: column;}
 
   /* styling for homepage end here*/
 
@@ -865,9 +812,7 @@ footer .logo a {
     flex-direction: column;
   }
 
-  .cat-breed-info .rate {
-    width: 50px;
-  }
+  .cat-breed-info .rate {  width: 50px;}
 
   .top-searched-breeds .breed figure {
     width: 300px;
@@ -882,36 +827,24 @@ footer .logo a {
 /*media query for 540px starts here*/
 @media only screen and (max-width: 540px) {
 
-  .wrapper-large {
-    width: 90%;
-  }
+  .wrapper-large {  width: 90%;}
 
-  .wrapper {
-    width: 85%;
-  }
+  .wrapper {  width: 85%;}
 
   /* styling for homepage start here*/
 
-  .hero-section {
-    padding: 30px 0;
-  }
+  .hero-section {  padding: 30px 0;}
 
-  .hero-section .introduction {
-    width: 100%;
-  }
+  .hero-section .introduction { width: 100%;}
 
   .hero-section .logo {
     padding-bottom: 15px;
     font-size: 21px;
   }
 
-  .hero-section .logo span {
-    display: none;
-  }
+  .hero-section .logo span { display: none;}
 
-  .hero-section .search-field {
-    display: none;
-  }
+  .hero-section .search-field { display: none;}
 
   .hero-section .search-field-btn {
     width: 30%;
@@ -924,33 +857,64 @@ footer .logo a {
     font-size: 18px;
   }
 
-  .most-searched-breeds .cat-breed figure {
-    height: 134px;
+  .most-searched-breeds .cat-breed figure { height: 134px;}
+
+  .why-to-have-a-cat .cats-benefits .description {  padding: 40px 0;}
+
+  .search-modal { 
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    background: #fff;
   }
 
-  .why-to-have-a-cat .cats-benefits .description {
-    padding: 40px 0
+  .search-modal .search-field { 
+    width: 90%;
+    margin: 60px auto;
+  }
+
+  .search-modal .search-field input[type=text] { border: 1px solid #000;}
+
+  .search-modal span { 
+    position: absolute;
+    top: 10px;
+    right: 5%;
+  }
+
+  .search-modal span::before {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    float: right;
+    background: #e0e0e0;
+    font-size: 21px;
+    align-items: center;
+    content: '\f00d';
+    justify-content: center;
+    text-indent: 0;
+  }
+
+  .search-modal span:hover::before { 
+    background-color: #000;
+    color: #e0e0e0;
   }
 
   /* styling for homepage end here*/
 
   /* styling for description start  here*/
-  .cat-breed-info .detail {
-    flex-direction: column;
-  }
+  .cat-breed-info .detail {  flex-direction: column;}
 
   .cat-breed-info .ratings {
     padding: 10px 0;
     justify-content: flex-start;
   }
 
-  .cat-breed-info .rate {
-    width: 90px;
-  }
+  .cat-breed-info .rate {  width: 90px;}
 
-  .breed-photos .photo {
-    height: 170px;
-  }
+  .breed-photos .photo {  height: 170px;}
 
   /* styling for description end  here*/
 }
@@ -959,68 +923,44 @@ footer .logo a {
 @media only screen and (max-width: 425px) {
 
   /* styling for homepage start here*/
-  .hero-section .search-field-btn {
-    width: 45%;
-  }
+  .hero-section .search-field-btn {  width: 45%;}
 
-  .most-searched-breeds .title {
-    font-size: 24px;
-  }
+  .most-searched-breeds .title {  font-size: 24px;}
 
-  .why-to-have-a-cat .cats-benefits .title {
-    font-size: 32px;
-  }
+  .why-to-have-a-cat .cats-benefits .title {  font-size: 33px;}
 
-  .why-to-have-a-cat .gallery-items .gallery-item:nth-child(1) {
-    height: 105px;
-  }
+  .why-to-have-a-cat .gallery-items .gallery-item:nth-child(1) {  height: 105px;}
 
-  .why-to-have-a-cat .gallery-items .gallery-item:nth-child(2) {
-    height: 184px;
-  }
+  .why-to-have-a-cat .gallery-items .gallery-item:nth-child(2) {  height: 184px;}
 
-  .why-to-have-a-cat .gallery .gallery-item {
-    height: 242px;
-  }
+  .why-to-have-a-cat .gallery .gallery-item {  height: 242px;}
 
   /* styling for homepage end here*/
 
   /* styling for description start  here*/
 
-  .breed-photos {
-    padding: 60px 0;
-  }
+  .breed-photos {  padding: 60px 0;}
 
-  .cat-breed-info .cat-breed-details {
-    padding: 30px 0;
-  }
+  .cat-breed-info .cat-breed-details {  padding: 30px 0;}
 
   /* styling for description end  here*/
 
   /* styling for top10searched start here*/
   .top-most-searched-breeds .title,
-  .reasons-to-have-cat .title {
-    font-size: 24px;
-  }
+  .reasons-to-have-cat .title {  font-size: 24px;}
 
   .top-searched-breeds .breed figure {
     width: 200px;
     height: 200px;
   }
 
-  .top-searched-breeds .breed .breed-name {
-    font-size: 21px;
-  }
+  .top-searched-breeds .breed .breed-name { font-size: 21px;}
 
-  .top-searched-breeds .breed {
-    padding-bottom: 50px;
-  }
+  .top-searched-breeds .breed {  padding-bottom: 50px;}
 
   /* styling for top10searched end here*/
   /* styling for footer start here*/
-  .copyright {
-    font-size: 12px;
-  }
+  .copyright {  font-size: 12px;}
 
   /* styling for footer end here*/
 }
