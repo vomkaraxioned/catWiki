@@ -246,7 +246,6 @@ img {
 
 .hero-section .search-field,
 .search-modal .search-field,
-.suggestion-active,
 .most-searched-breeds .discover-more,
 .most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,
@@ -363,7 +362,8 @@ header {  padding: 20px 0;}
 .search-modal input[type=text]:focus {  outline: none;}
 
 .hero-section .suggestion,
-.search-modal .suggestion {
+.search-modal .suggestion,
+.suggestion-active {
   max-height: 220px;
   width: 100%;
   padding: 20px 0;
