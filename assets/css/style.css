@@ -246,6 +246,7 @@ img {
 
 .hero-section .search-field,
 .search-modal .search-field,
+.suggestion-active,
 .most-searched-breeds .discover-more,
 .most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,
@@ -368,12 +369,16 @@ header {  padding: 20px 0;}
   width: 100%;
   padding: 20px 0;
   border-radius: 20px;
-  display: flex;
   overflow-y: scroll;
   position: absolute;
   top: 60px;
   background: #fff;
   flex-direction: column;
+}
+
+.hero-section .suggestion,
+.search-modal .suggestion {
+  display: none;
 }
 
 .hero-section .suggest,
