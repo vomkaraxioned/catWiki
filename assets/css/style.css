@@ -368,7 +368,7 @@ header {  padding: 20px 0;}
   width: 100%;
   padding: 20px 0;
   border-radius: 20px;
-  display: none;
+  display: flex;
   overflow-y: scroll;
   position: absolute;
   top: 60px;
@@ -378,10 +378,23 @@ header {  padding: 20px 0;}
 
 .hero-section .suggest,
 .search-modal .suggest {
+  width: 80%;
   padding: 15px 7%;
+  margin: 0 auto;
   border-radius: 5px;
   color: #000;
+  cursor: pointer;
   text-transform: capitalize;
+}
+
+::-webkit-scrollbar { width: 7px;}
+
+::-webkit-scrollbar-track { background: #f2f2f2;}
+
+::-webkit-scrollbar-thumb {
+  height: 68px;
+  border-radius: 20px;
+  background: #bdbdbd;
 }
 
 .hero-section .suggest:hover,
