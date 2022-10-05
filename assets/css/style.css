@@ -376,10 +376,7 @@ header {  padding: 20px 0;}
   flex-direction: column;
 }
 
-.hero-section .suggestion,
-.search-modal .suggestion {
-  display: none;
-}
+.suggestion-deactivate { display: none;}
 
 .hero-section .suggest,
 .search-modal .suggest {
