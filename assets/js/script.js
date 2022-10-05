@@ -5,26 +5,25 @@ omkar valve
 const searchField = document.querySelector(".search-field"),
 topSearchUl = document.querySelector(".top-searched-breeds"),
 breedDeatails = document.querySelector(".cat-breed-info .wrapper"),
+url = "https://api.thecatapi.com/v1/breeds";
 //xmlhttp object created here
 xmlHttpObj = new XMLHttpRequest();
-let result;
+let apiData,breed;
 
-function apiCall(url) {
-    xmlHttpObj.onreadystatechange = function () {
-        try {
-            if(this.readyState == 4 && this.status == 200){
-                result = JSON.parse(this.responseText);
-            }else {
-                throw this.status + ":"+ this.statusText;
-            }
-        } catch (error) {
-            console.log(error);
+xmlHttpObj.onreadystatechange = function () {
+    try {
+        if(this.readyState == 4 && this.status == 200){
+            apiData = JSON.parse(this.responseText);
+        }else {
+            throw this.status + ":"+ this.statusText;
         }
+    } catch (error) {
+        apiData = error;
     }
-    xmlHttpObj.open("get",url);
-    xmlHttpObj.setRequestHeader("x-api-key","live_8a62s5Wi3WavotreFXMViJoZAtCASlUBrg0theNVTlEa5Gzknkzef1549FExxwIT");
-    xmlHttpObj.send();
 }
+xmlHttpObj.open("get",url);
+xmlHttpObj.setRequestHeader("x-api-key","live_8a62s5Wi3WavotreFXMViJoZAtCASlUBrg0theNVTlEa5Gzknkzef1549FExxwIT");
+xmlHttpObj.send();
 
 if(searchField) {
     let inputBox = searchField.children[0];
@@ -34,10 +33,9 @@ if(searchField) {
 function suggest() {
     let suggestData = [],breedName,matched;
     const suggestionBox = document.querySelector(".suggestion"),
-    key = this.value.toLowerCase();
-    apiCall("https://api.thecatapi.com/v1/breeds");
-    for(x in result) { 
-        breedName = result[x].name.toLowerCase();
+    key = this.value.toLowerCase().trim();
+    for(x in apiData) { 
+        breedName = apiData[x].name.toLowerCase();
         matched = true;
         for(x in key) {
             if(key[x] != breedName[x]) {
@@ -52,23 +50,33 @@ function suggest() {
     if(suggestData.length >0) {
         appendToSuggestionBox(suggestData,suggestionBox);
     }else {
-        suggestionBox.classList.remove("sugesstion-active");
-        // suggestionBox.classList.add("suggestion");
+        toggleClasses(suggestionBox,"sugesstion-active","suggestion-deactivate");
     }
+    this.addEventListener("click",function (e) {
+        toggleClasses(suggestionBox,"sugesstion-active","suggestion-deactivate");
+        this.value = "";
+    });
 }
 
+//appendSuggestion method accepts parameter as suggestedDtata(arr),suggestionBox(element node)
 function appendToSuggestionBox(data,suggestionBox) {
+    suggestionBox.innerHTML = "";
     for(x in data) {
         const li = document.createElement("li");
         li.classList.add("suggest");
         li.innerText = data[x];
-        // li.addEventListener("click",redirectToDescription());
+        li.addEventListener("click",function () {
+            breed = this.innerText; 
+            alert(breed);
+            location.href = "description.html";
+        });
         suggestionBox.appendChild(li);
     }
-    // suggestionBox.classList.remove("suggestion");
-    suggestionBox.classList.add("suggestion-active");
+    toggleClasses(suggestionBox,"suggestion-deactivate","suggestion-active");
 }
 
-// function redirectToDescription() {
-//     apiCall("");
-// }
+//toggleclasses method accepts parameter as  suggestionbox(element node),classname(str),classname(str)
+function toggleClasses(element,remove,add) {
+    element.classList.remove(remove);
+    element.classList.add(add);
+}
