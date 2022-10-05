@@ -268,7 +268,8 @@ footer .wrapper-large,
 .title::first-letter,
 .description::first-letter,
 .reasons-to-have-cat .reasons h3,
-.reasons-to-have-cat .reasons .description::first-letter {
+.reasons-to-have-cat .reasons .description::first-letter,
+.why-to-have-a-cat .cats-benefits .title span {
   text-transform: capitalize;
 }
 
