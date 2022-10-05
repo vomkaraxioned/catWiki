@@ -33,8 +33,7 @@ if(searchField) {
 
 function suggest() {
     let suggestData = [],breedName,matched;
-    const key = this.value.toLowerCase(),
-    suggestionBox = document.querySelector();
+    const key = this.value.toLowerCase();
     apiCall("https://api.thecatapi.com/v1/breeds");
     for(x in result) { 
         breedName = result[x].name.toLowerCase();
@@ -49,5 +48,17 @@ function suggest() {
         suggestData.push(breedName);
     }
 }
+appendToSuggestionBox(suggestData);
+}
 
+function appendToSuggestionBox(data) {
+    const  suggestionBox = document.querySelector(".suggestion");
+    // suggestionBox.innerHTML = "";
+    for(x in data) {
+        const li = document.createElement("li");
+        li.classList.add("suggest");
+        li.innerText = data[x];
+        suggestionBox.appendChild(li);
+    }
+    suggestionBox.classList.add("suggestion-active");
 }
