@@ -101,6 +101,7 @@ function toggleClasses(element,remove,add) {
 
 //sshowBreedDetails
 function showBreedDetails() {
+    breedDetails.innerHTML = "";
     const breedGallery = document.querySelector(".photos"),
     figure = document.createElement("figure");
     img = document.createElement("img"),
@@ -119,7 +120,6 @@ function showBreedDetails() {
         }
     }
     values = [breedInfo.temperament,breedInfo.life_span,breedInfo.adaptability,breedInfo.affection_level,breedInfo.child_friendly,breedInfo.grooming,breedInfo.intelligence,breedInfo.health_issues,breedInfo.social_needs,breedInfo.stranger_friendly];
-    console.log(values);
     div.classList.add("cat-breed-details");
     h2.classList.add("title");
     p.classList.add("description");
@@ -131,19 +131,35 @@ function showBreedDetails() {
     for(x in parameters) {
        const li = document.createElement("li"),
        span = document.createElement("span");
-       let key ;
        li.classList.add("detail");
        span.innerText = parameters[x]+":";
-       li.appendChild(span);
-      if(x > 2) {
-          const ul = document.createElement("ul");
-          ul.classList.add("ratings");
-          let i = key;
-      }else {
-      }
-
+       if(x > 2) {
+           const ul = document.createElement("ul");
+           ul.classList.add("ratings");
+           let i = 0;
+           while(i < 5) {
+               const li = document.createElement("li");
+               li.classList.add("rate");
+               if(i < values[x]) {
+                   console.log(values[x]);
+                   li.classList.add("rate-active");
+                }
+                ul.appendChild(li);
+                i++;
+            }
+            li.appendChild(ul);
+        }else {
+            li.innerText ="\t"+ values[x];
+        }
+        li.prepend(span);
+        ul.appendChild(li);
     }
-
+    figure.appendChild(img);
+    div.appendChild(h2);
+    div.appendChild(p);
+    div.appendChild(ul);
+    breedDetails.appendChild(figure);
+    breedDetails.appendChild(div);
 }
 
 function loadElements() {
@@ -155,6 +171,7 @@ function loadElements() {
     
     if(breedDetails) {
         showBreedDetails();
+        console.log(result);
     }
     
 }
