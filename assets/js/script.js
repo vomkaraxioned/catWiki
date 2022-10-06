@@ -2,10 +2,10 @@
 omkar valve
 */
 //global constant variables declared and assigned here
-let breed,result;
+let result;
 const searchField = document.querySelector(".search-field"),
 topSearchUl = document.querySelector(".top-searched-breeds"),
-breedDeatails = document.querySelector(".cat-breed-info .wrapper"),
+breedDetails = document.querySelector(".cat-breed-info .wrapper"),
 url = "https://api.thecatapi.com/v1/breeds",
 //xmlhttp object created here
 xmlHttpObj = new XMLHttpRequest();
@@ -22,7 +22,31 @@ xmlHttpObj = new XMLHttpRequest();
     xmlHttpObj.send();
 
 function addSummary() {
-     
+    const breedsUl = document.querySelector(".most-searched-breeds .cat-breeds"),
+    limit = 4;
+    let i = 0;
+    breedsUl.innerHTML = "";
+   while(i<limit) {
+    const li = document.createElement("li"),
+    figure = document.createElement("figure"),
+    img = document.createElement("img"),
+    a = document.createElement("a");
+    li.classList.add("cat-breed");
+    img.src = result[i].image.url;
+    img.alt = result[i].name;
+    a.href = "description.html";
+    a.title = result[i].name;
+    a.innerText = result[i].name;
+    figure.appendChild(img);
+    li.appendChild(figure);
+    li.appendChild(a);
+    li.addEventListener("click",function () {
+        breed = this.children[1].innerText;
+        location.href = "description.html?"+breed;
+    });
+    breedsUl.appendChild(li);
+    i++;
+   }
 }
 
 function suggest() {
@@ -62,8 +86,7 @@ function appendToSuggestionBox(data,suggestionBox) {
         li.innerText = data[x];
         li.addEventListener("click",function () {
             breed = this.innerText; 
-            alert(breed);
-            location.href = "description.html";
+            location.href = "description.html?"+breed;
         });
         suggestionBox.appendChild(li);
     }
@@ -76,11 +99,62 @@ function toggleClasses(element,remove,add) {
     element.classList.add(add);
 }
 
+//sshowBreedDetails
+function showBreedDetails() {
+    const breedGallery = document.querySelector(".photos"),
+    figure = document.createElement("figure");
+    img = document.createElement("img"),
+    div = document.createElement("div"),
+    h2 = document.createElement("h2"),
+    p = document.createElement("p"),
+    ul = document.createElement("ul"),
+    breed = document.URL.split("?").pop(),
+    parameters = ["temperament","life","adaptability","affection Level","Child Friendly",
+    "Grooming","Intelligence","Health Issues","Social Needs","Stranger Friendly"];
+    let breedInfo,values;
+    for(x in result) {
+        if(breed == result[x].name) {
+            breedInfo = result[x];
+            console.log(breedInfo);
+        }
+    }
+    values = [breedInfo.temperament,breedInfo.life_span,breedInfo.adaptability,breedInfo.affection_level,breedInfo.child_friendly,breedInfo.grooming,breedInfo.intelligence,breedInfo.health_issues,breedInfo.social_needs,breedInfo.stranger_friendly];
+    console.log(values);
+    div.classList.add("cat-breed-details");
+    h2.classList.add("title");
+    p.classList.add("description");
+    ul.classList.add("breed-details");
+    img.src = breedInfo.image.url;
+    img.alt = breedInfo.name;
+    h2.innerText = breedInfo.name;
+    p.innerText = breedInfo.description;
+    for(x in parameters) {
+       const li = document.createElement("li"),
+       span = document.createElement("span");
+       let key ;
+       li.classList.add("detail");
+       span.innerText = parameters[x]+":";
+       li.appendChild(span);
+      if(x > 2) {
+          const ul = document.createElement("ul");
+          ul.classList.add("ratings");
+          let i = key;
+      }else {
+      }
+
+    }
+
+}
 
 function loadElements() {
     if(searchField) {
         addSummary();
         let inputBox = searchField.children[0];
        inputBox.addEventListener("keyup",suggest);
-    }    
+    }  
+    
+    if(breedDetails) {
+        showBreedDetails();
+    }
+    
 }
