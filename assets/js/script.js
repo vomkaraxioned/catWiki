@@ -60,7 +60,6 @@ function addSummary() {
     li.appendChild(a);
     li.addEventListener("click",function () {
         breed = this.children[1].innerText;
-        alert(breed);
         location.href = "description.html?"+breed;
     });
     breedsUl.appendChild(li);
