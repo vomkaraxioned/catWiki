@@ -271,6 +271,7 @@ footer .wrapper-large,
 .reasons-to-have-cat .reasons .description::first-letter,
 .why-to-have-a-cat .cats-benefits .title span { text-transform: capitalize;}
 
+.dummy { font-size: 21px;}
 /*=================================
   Header styling starts here
 =================================*/
@@ -349,8 +350,8 @@ header {  padding: 20px 0;}
 .hero-section .search-btn ,
 .search-modal .search-btn{
   position: absolute;
-  right: 7%;
   top: 35%;
+  right: 7%;
   font-family: 'FontAwesome';
   font-weight: 900;
 }
@@ -588,10 +589,8 @@ header {  padding: 20px 0;}
   z-index: 1;
 }
 .cat-breed-info figure img { height: 100%;}
-.cat-breed-info figure::before {
-  height: 300px;
-  left: -5%;
-}
+
+.cat-breed-info figure::before { left: -5%;}
 
 .cat-breed-info .cat-breed-details {  flex-basis: 55%;}
 
@@ -883,7 +882,7 @@ footer .logo a {  color: #fff;}
     width: 100%;
     height: 100vh;
     display: block;
-    position: absolute;
+    position:fixed;
     top: 0;
     background: #fff;
   }
