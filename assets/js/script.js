@@ -1,3 +1,7 @@
 /* Author: 
 
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> feature-html
