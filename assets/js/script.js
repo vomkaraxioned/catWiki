@@ -2,10 +2,11 @@
 omkar valve
 */
 //global constant variables declared and assigned here
-let result;
+let result,searchInput;
 const searchField = document.querySelector(".search-field"),
 topSearchUl = document.querySelector(".top-searched-breeds"),
 breedDetails = document.querySelector(".cat-breed-info .wrapper"),
+searchBtn = document.querySelector(".search-field-btn"),
 topSearch = document.querySelector(".top-searched-breeds");
 url = "https://api.thecatapi.com/v1/breeds",
 //xmlhttp object created here
@@ -54,8 +55,12 @@ function addSummary() {
 //suggestion function
 function suggest() {
     let suggestData = [],breedName,matched;
-    const suggestionBox = document.querySelector(".suggestion"),
-    key = this.value.toLowerCase().trim();
+    const key = this.value.toLowerCase().trim();
+    if(innerWidth < 541) {
+        suggestionBox = document.querySelector(".search-modal .suggestion")
+    }else {
+        suggestionBox = document.querySelector(".suggestion");
+    }
     for(x in result) { 
         breedName = result[x].name.toLowerCase();
         matched = true;
@@ -217,10 +222,31 @@ function showBreedDetails() {
     addPhotos(breedInfo);
 }
 
+function modal() {;
+    const modal = document.createElement("div"),
+    div = document.createElement("div"),
+    span = document.createElement("span");
+    modal.classList.add("search-modal");
+    div.classList.add("search-field");
+    span.classList.add("icon");
+    div.innerHTML = searchInput;
+    modal.append(span);
+    modal.appendChild(div);
+    modal.children[1].children[0].addEventListener("keyup",suggest);
+    modal.addEventListener("click",function(e) {
+     if(e.target == this.children[0]) {
+        document.body.removeChild(modal);
+     }
+    });
+    document.body.appendChild(modal);
+
+}
+
 function loadElements() {
     if(searchField) {
         addSummary();
         let inputBox = searchField.children[0];
+        searchInput = searchField.innerHTML;
        inputBox.addEventListener("keyup",suggest);
     }  
     
@@ -232,5 +258,10 @@ function loadElements() {
     if(topSearch) {
         addTopSeach();
     }
+
+    if(searchBtn) {
+        searchBtn.children[0].addEventListener("click",modal);
+    }
+
     
 }
