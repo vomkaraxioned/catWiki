@@ -52,9 +52,9 @@ function suggest() {
     }else {
         toggleClasses(suggestionBox,"sugesstion-active","suggestion-deactivate");
     }
-    this.addEventListener("click",function (e) {
+    document.body.addEventListener("click",function (e) {
         toggleClasses(suggestionBox,"sugesstion-active","suggestion-deactivate");
-        this.value = "";
+        searchField.children[0].value = "";
     });
 }
 
