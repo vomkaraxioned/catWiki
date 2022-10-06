@@ -623,13 +623,14 @@ header {  padding: 20px 0;}
   justify-content: flex-end;
 }
 
-.cat-breed-info .rate {
+.cat-breed-info .rate,
+.rate-active {
   width: 60px;
   height: 12px;
   border-radius: 20px;
-  background: #e0e0e0;
   text-indent: -9999px;
 }
+.cat-breed-info .rate { background: #e0e0e0;}
 
 .rate-active {  background: #544439;}
 
