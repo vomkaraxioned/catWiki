@@ -6,6 +6,7 @@ let result;
 const searchField = document.querySelector(".search-field"),
 topSearchUl = document.querySelector(".top-searched-breeds"),
 breedDetails = document.querySelector(".cat-breed-info .wrapper"),
+topSearch = document.querySelector(".top-searched-breeds");
 url = "https://api.thecatapi.com/v1/breeds",
 //xmlhttp object created here
 xmlHttpObj = new XMLHttpRequest();
@@ -21,6 +22,7 @@ xmlHttpObj = new XMLHttpRequest();
     xmlHttpObj.setRequestHeader("x-api-key","live_8a62s5Wi3WavotreFXMViJoZAtCASlUBrg0theNVTlEa5Gzknkzef1549FExxwIT");
     xmlHttpObj.send();
 
+    //addSummary function
 function addSummary() {
     const breedsUl = document.querySelector(".most-searched-breeds .cat-breeds"),
     limit = 4;
@@ -49,6 +51,7 @@ function addSummary() {
    }
 }
 
+//suggestion function
 function suggest() {
     let suggestData = [],breedName,matched;
     const suggestionBox = document.querySelector(".suggestion"),
@@ -99,6 +102,40 @@ function toggleClasses(element,remove,add) {
     element.classList.add(add);
 }
 
+//addTopSearch
+function addTopSeach() {
+    const limit = 10;
+    let i = 0;
+    topSearch.innerHTML = "";
+  while(i < limit) {
+    const  li = document.createElement("li"),
+    figure = document.createElement("figure");
+    img = document.createElement("img"),
+    div = document.createElement("div"),
+    h3 = document.createElement("h3"),
+    p = document.createElement("p");
+    li.classList.add("breed");
+    div.classList.add("breed-info");
+    h3.classList.add("breed-name");
+    p.classList.add("description");
+    img.src = result[i].image.url;
+    img.alt = h3.innerText = result[i].name;
+    p.innerText = result[i].description;
+    figure.appendChild(img);
+    div.appendChild(h3);
+    div.appendChild(p);
+    li.appendChild(figure);
+    li.appendChild(div);
+    li.addEventListener("click",function() {
+            breed = this.children[1].children[0].innerText; 
+            location.href = "description.html?"+breed;
+    });
+    topSearch.appendChild(li);
+    i++;
+  }
+
+}
+
 //add photos
 function addPhotos(breedInfo) {
     const breedGallery = document.querySelector(".photos"),limit = 8;
@@ -142,8 +179,7 @@ function showBreedDetails() {
     p.classList.add("description");
     ul.classList.add("breed-details");
     img.src = breedInfo.image.url;
-    img.alt = breedInfo.name;
-    h2.innerText = breedInfo.name;
+    img.alt = h2.innerText = breedInfo.name;
     p.innerText = breedInfo.description;
     for(x in parameters) {
        const li = document.createElement("li"),
@@ -191,6 +227,10 @@ function loadElements() {
     if(breedDetails) {
         showBreedDetails();
         console.log(result);
+    }
+
+    if(topSearch) {
+        addTopSeach();
     }
     
 }
