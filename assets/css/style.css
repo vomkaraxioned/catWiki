@@ -230,6 +230,8 @@ img {
   font-size: 18px;
 }
 
+.remove-scroll { overflow-y: hidden;}
+
 .logo a:hover,
 .breeds .cat-breed a:hover,
 .breeds .cat-breed a:hover,
@@ -585,7 +587,7 @@ header {  padding: 20px 0;}
   flex-basis: 40%;
   z-index: 1;
 }
-
+.cat-breed-info figure img { height: 100%;}
 .cat-breed-info figure::before {
   height: 300px;
   left: -5%;
