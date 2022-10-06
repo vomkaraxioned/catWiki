@@ -2,40 +2,35 @@
 omkar valve
 */
 //global constant variables declared and assigned here
+let breed,result;
 const searchField = document.querySelector(".search-field"),
 topSearchUl = document.querySelector(".top-searched-breeds"),
 breedDeatails = document.querySelector(".cat-breed-info .wrapper"),
-url = "https://api.thecatapi.com/v1/breeds";
+url = "https://api.thecatapi.com/v1/breeds",
 //xmlhttp object created here
 xmlHttpObj = new XMLHttpRequest();
-let apiData,breed;
-
-xmlHttpObj.onreadystatechange = function () {
-    try {
-        if(this.readyState == 4 && this.status == 200){
-            apiData = JSON.parse(this.responseText);
-        }else {
-            throw this.status + ":"+ this.statusText;
-        }
-    } catch (error) {
-        apiData = error;
+    xmlHttpObj.onload= function () {
+            if(this.readyState == 4 && this.status == 200){
+              result =   JSON.parse(this.responseText);
+              loadElements();
+            }else {
+                result = ""+this.status + ":"+ this.statusText+"";
+            }
     }
-}
-xmlHttpObj.open("get",url);
-xmlHttpObj.setRequestHeader("x-api-key","live_8a62s5Wi3WavotreFXMViJoZAtCASlUBrg0theNVTlEa5Gzknkzef1549FExxwIT");
-xmlHttpObj.send();
+    xmlHttpObj.open("GET",url);
+    xmlHttpObj.setRequestHeader("x-api-key","live_8a62s5Wi3WavotreFXMViJoZAtCASlUBrg0theNVTlEa5Gzknkzef1549FExxwIT");
+    xmlHttpObj.send();
 
-if(searchField) {
-    let inputBox = searchField.children[0];
-   inputBox.addEventListener("keyup",suggest);
+function addSummary() {
+     
 }
 
 function suggest() {
     let suggestData = [],breedName,matched;
     const suggestionBox = document.querySelector(".suggestion"),
     key = this.value.toLowerCase().trim();
-    for(x in apiData) { 
-        breedName = apiData[x].name.toLowerCase();
+    for(x in result) { 
+        breedName = result[x].name.toLowerCase();
         matched = true;
         for(x in key) {
             if(key[x] != breedName[x]) {
@@ -79,4 +74,13 @@ function appendToSuggestionBox(data,suggestionBox) {
 function toggleClasses(element,remove,add) {
     element.classList.remove(remove);
     element.classList.add(add);
+}
+
+
+function loadElements() {
+    if(searchField) {
+        addSummary();
+        let inputBox = searchField.children[0];
+       inputBox.addEventListener("keyup",suggest);
+    }    
 }
