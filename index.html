@@ -1,21 +1,25 @@
 <!doctype html>
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
-<html lang="en"> 
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>CatWiki(HomePage)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- favicon.ico in the root directory -->
+  <!--favicon.ico in the root directory:-->
   <link rel="shortcut icon" href="favicon.ico" />
   <!--Google Web Fonts link for fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Mystery+Quest&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Mystery+Quest&display=swap"
+    rel="stylesheet">
   <!--FontAwesome link for icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
-  <link rel="stylesheet" media="screen" href="assets/css/style.css" >
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
 </head>
 
 <body>
@@ -30,77 +34,77 @@
     <!--header section end-->
     <!--main section start-->
     <main>
-          <!--hero section start-->
-          <div class="wrapper-large">
-            <div class="hero-section">
-              <div class="wrapper">
-                <div class="introduction">
-                  <h2 class="logo">catwiki <span class="icon">logo</span></h2>
-                  <p class="description">get to know more about your cat breed</p>
-                  <form action="#FIXME" method="GET" name="search" class="search">
-                    <div class="search-field">
-                      <input type="text" placeholder="Enter your breed" name="input-breed"/>
-                      <div class="search-btn">
-                        <input type="submit" name="search-btn" class="icon search-btn"/>
-                      </div>
-                      <ul class="suggestion">
-                        <li class="suggest">aada</li>
-                        <li class="suggest">aada</li>
-                      </ul>
-                    </div>
-                    <div class="search-field-btn">
-                      <input type="text" placeholder="Search" name="input-breed"/>
-                      <div class="search-btn">
-                        <input type="submit" name="search-btn" class="icon search-btn"/>
-                      </div>
-                    </div>
-                  </form>
+      <!--hero section start-->
+      <div class="wrapper-large">
+        <div class="hero-section">
+          <div class="wrapper">
+            <div class="introduction">
+              <h2 class="logo">catwiki <span class="icon">logo</span></h2>
+              <p class="description">get to know more about your cat breed</p>
+              <form action="#FIXME" method="GET" name="search" class="search">
+                <div class="search-field">
+                  <input type="text" placeholder="Enter your breed" name="input-breed" />
+                  <div class="search-btn">
+                    <input type="submit" name="search-btn" class="icon search-btn" />
+                  </div>
+                  <ul class="suggestion suggestion-deactivate">
+                    <li class="dummy"></li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!--hero section end-->
-          <!--most searched section start-->
-          <section class="most-searched-breeds">
-            <div class="wrapper-large">
-              <div class="wrapper">
-                <h4 class="sub-title">most searched breeds</h4>
-                <div class="discover-more">
-                  <h3 class="title">66+ <span>breeds for</span> you to discover</h3>
-                  <div class="see-more">
-                    <a href="top10most.html" title="See More">see more</a>
+                <div class="search-field-btn">
+                  <input type="text" placeholder="Search" name="input-breed" />
+                  <div class="search-btn">
+                    <input type="submit" name="search-btn" class="icon search-btn" />
                   </div>
                 </div>
-                <ul class="cat-breeds">
-                  <li class="dummy">Please Wait loading.....</li>
-                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--hero section end-->
+      <!--most searched section start-->
+      <section class="most-searched-breeds">
+        <div class="wrapper-large">
+          <div class="wrapper">
+            <h4 class="sub-title">most searched breeds</h4>
+            <div class="discover-more">
+              <h3 class="title">66+ <span>breeds for</span> you to discover</h3>
+              <div class="see-more">
+                <a href="top10most.html" title="See More">see more</a>
               </div>
             </div>
-          </section>
-           <!--most searched section end-->
-          <!--why-to-have-a-cat section start-->
-          <section class="why-to-have-a-cat">
-           <div class="wrapper">
-             <div class="cats-benefits">
-              <h3 class="title">why should you have a cat&quest;</h3>
-              <p class="description">having the cat around you can actually trigger the release of calming chemicals in your body which lower your stress and anxiety leves</p>
-              <a href="aboutCats.html" title="Read More">read more</a>
-             </div> 
-             <div class="gallery">
-               <div class="gallery-items">
-                 <figure class="gallery-item"><img src="assets/images/cat1.jpg" alt="Cat1"></figure>
-                 <figure class="gallery-item"><img src="assets/images/cat2.jpg" alt="Cat2"></figure>
-               </div>
-               <figure class="gallery-item"><img src="assets/images/cat3.jpg" alt="Cat3"></figure>
-             </div>
-           </div>
-          </section>
-          <!--why-to-have-a-cat section start-->
+            <ul class="cat-breeds">
+              <li class="dummy">Please Wait Loading Data.....</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--most searched section end-->
+      <!--why-to-have-a-cat section start-->
+      <section class="why-to-have-a-cat">
+        <div class="wrapper">
+          <div class="cats-benefits">
+            <h3 class="title"><span>why</span> should you have a cat&quest;</h3>
+            <p class="description">having the cat around you can actually trigger the release of calming chemicals in
+              your body which lower your stress and anxiety leves</p>
+            <a href="aboutCats.html" title="Read More">read more</a>
+          </div>
+          <div class="gallery">
+            <div class="gallery-items">
+              <figure class="gallery-item"><img src="assets/images/cat1.jpg" alt="Cat1"></figure>
+              <figure class="gallery-item"><img src="assets/images/cat2.jpg" alt="Cat2"></figure>
+            </div>
+            <figure class="gallery-item"><img src="assets/images/cat3.jpg" alt="Cat3"></figure>
+          </div>
+        </div>
+      </section>
+      <!--why-to-have-a-cat section start-->
     </main>
     <!--main section end-->
 
     <!--footer section start-->
-    <footer>      
+    <footer>
       <div class="wrapper-large">
         <h5 class="logo"><a href="index.html" title="Cat Wiki">catwiki <span class="icon">logo</span></a></h5>
         <span class="copyright">&copy; created by <span>username</span>-devChallenge.io 2022</span>
@@ -112,4 +116,5 @@
   <!--container end-->
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
