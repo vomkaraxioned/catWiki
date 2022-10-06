@@ -99,11 +99,28 @@ function toggleClasses(element,remove,add) {
     element.classList.add(add);
 }
 
-//sshowBreedDetails
+//add photos
+function addPhotos(breedInfo) {
+    const breedGallery = document.querySelector(".photos"),limit = 8;
+    let i = 0; 
+    breedGallery.innerHTML = "";
+    while(i < limit) {
+        const li = document.createElement("li"),
+        img = document.createElement("img");
+        li.classList.add("photo");
+        img.src = breedInfo.image.url;
+        img.alt = breedInfo.name;
+        li.appendChild(img);
+        breedGallery.appendChild(li);
+        i++;
+    }
+
+}
+
+//showBreedDetails
 function showBreedDetails() {
     breedDetails.innerHTML = "";
-    const breedGallery = document.querySelector(".photos"),
-    figure = document.createElement("figure");
+    const figure = document.createElement("figure");
     img = document.createElement("img"),
     div = document.createElement("div"),
     h2 = document.createElement("h2"),
@@ -139,10 +156,11 @@ function showBreedDetails() {
            let i = 0;
            while(i < 5) {
                const li = document.createElement("li");
-               li.classList.add("rate");
                if(i < values[x]) {
                    console.log(values[x]);
                    li.classList.add("rate-active");
+                }else {
+                    li.classList.add("rate");
                 }
                 ul.appendChild(li);
                 i++;
@@ -160,6 +178,7 @@ function showBreedDetails() {
     div.appendChild(ul);
     breedDetails.appendChild(figure);
     breedDetails.appendChild(div);
+    addPhotos(breedInfo);
 }
 
 function loadElements() {
