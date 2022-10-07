@@ -2,12 +2,6 @@
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-   ========================================================================== */
 html,
 body,
 div,
@@ -182,7 +176,8 @@ sub {
 
 /*for all*/
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -223,8 +218,10 @@ li {
 img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .description {
@@ -239,12 +236,16 @@ img {
 .breeds .cat-breed a:hover,
 .most-searched-breeds .cat-breed a:hover {
   color: #dec68b;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
 .most-searched-breeds .see-more a:hover,
 .why-to-have-a-cat .cats-benefits a:hover {
   opacity: 1;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
@@ -255,6 +256,7 @@ img {
 .most-searched-breeds .see-more,
 .most-searched-breeds .cat-breeds,
 .most-searched-breeds .cat-breed figure,
+.why-to-have-a-cat .wrapper,
 .why-to-have-a-cat .gallery,
 .why-to-have-a-cat .gallery-items,
 footer .wrapper-large,
@@ -264,7 +266,11 @@ footer .wrapper-large,
 .cat-breed-info .detail,
 .breed-photos .photos,
 .top-searched-breeds,
-.top-searched-breeds .breed { display: flex;}
+.top-searched-breeds .breed { 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 
 .hero-section .description::first-letter,
 .title::first-letter,
@@ -333,7 +339,10 @@ header {  padding: 20px 0;}
 .hero-section .search-field-btn,
 .search-modal .search-field {
   position: relative;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .hero-section .search-field-btn {  display: none;}
@@ -381,7 +390,10 @@ header {  padding: 20px 0;}
   position: absolute;
   top: 60px;
   background: #fff;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .suggestion-deactivate { display: none;}
@@ -397,6 +409,7 @@ header {  padding: 20px 0;}
   text-transform: capitalize;
 }
 
+/* scroll bar styling start here */
 ::-webkit-scrollbar { width: 7px;}
 
 ::-webkit-scrollbar-track { background: #f2f2f2;}
@@ -406,6 +419,8 @@ header {  padding: 20px 0;}
   border-radius: 20px;
   background: #bdbdbd;
 }
+
+/* scroll bar styling end here */
 
 .hero-section .suggest:hover,
 .search-modal .suggest:hover { background-color: #e0e0e0;}
@@ -439,9 +454,15 @@ header {  padding: 20px 0;}
 .most-searched-breeds .discover-more {  padding: 40px 0;}
 
 .most-searched-breeds .see-more {
-  align-items: flex-end;
-  flex: 1;
-  justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .most-searched-breeds .see-more a {
@@ -471,7 +492,8 @@ header {  padding: 20px 0;}
 
 .most-searched-breeds .cat-breed {
   margin-right: 5%;
-  flex-basis: 25%;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
 }
 
 .most-searched-breeds .cat-breed:last-child {  margin-right: 0;}
@@ -510,11 +532,10 @@ header {  padding: 20px 0;}
 
 .why-to-have-a-cat {  padding: 120px 0;}
 
-.why-to-have-a-cat .wrapper {  display: flex;}
-
 .why-to-have-a-cat .cats-benefits {
   color: #291507;
-  flex-basis: 45%;
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
   font-size: 18px;
 }
 
@@ -540,7 +561,10 @@ header {  padding: 20px 0;}
 
 .why-to-have-a-cat .cats-benefits .description {  padding: 80px 0;}
 
-.why-to-have-a-cat .gallery {  flex-basis: 45%;}
+.why-to-have-a-cat .gallery {  
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+}
 
 .why-to-have-a-cat .gallery-item img,
 .cat-breed-info figure img,
@@ -551,12 +575,19 @@ header {  padding: 20px 0;}
   border-radius: 20px;
 }
 
-.why-to-have-a-cat .gallery-items {  flex-direction: column;}
+.why-to-have-a-cat .gallery-items {  
+  -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 
 .why-to-have-a-cat .gallery,
 .why-to-have-a-cat .gallery-items {
   gap: 5%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .why-to-have-a-cat .gallery-items .gallery-item:nth-child(1) {
@@ -567,7 +598,8 @@ header {  padding: 20px 0;}
 .why-to-have-a-cat .gallery-items .gallery-item:nth-child(2) {
   width: 70%;
   height: 293px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .why-to-have-a-cat .gallery .gallery-item {
@@ -587,20 +619,26 @@ header {  padding: 20px 0;}
 
 .cat-breed-info .wrapper {
   gap: 5%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .cat-breed-info figure {
   height: 371px;
   position: relative;
   z-index: 1;
-  flex-basis: 40%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
 }
 .cat-breed-info figure img { height: 100%;}
 
 .cat-breed-info figure::before { left: -5%;}
 
-.cat-breed-info .cat-breed-details {  flex-basis: 55%;}
+.cat-breed-info .cat-breed-details {  
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+}
 
 .cat-breed-info .title {
   padding-bottom: 20px;
@@ -611,7 +649,10 @@ header {  padding: 20px 0;}
 
 .cat-breed-info .breed-details {
   padding: 30px 0;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-transform: capitalize;
 }
 
@@ -621,15 +662,23 @@ header {  padding: 20px 0;}
 }
 
 .cat-breed-info .detail span {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   font-weight: 600;
 }
 
 .cat-breed-info .ratings {
-  align-items: center;
-  flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   gap: 2%;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .cat-breed-info .rate,
@@ -657,14 +706,16 @@ header {  padding: 20px 0;}
 
 .breed-photos .photos {
   padding: 30px 0;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 4%;
 }
 
 .breed-photos .photo {
   height: 278px;
   margin-bottom: 40px;
-  flex-basis: 21%;
+  -ms-flex-preferred-size: 21%;
+      flex-basis: 21%;
 }
 
 /* styling for breed-photos end here */
@@ -685,7 +736,10 @@ header {  padding: 20px 0;}
 .top-searched-breeds,
 .reasons-to-have-cat .reasons {
   padding: 40px 0;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .top-searched-breeds .breed {
@@ -696,12 +750,14 @@ header {  padding: 20px 0;}
 .top-searched-breeds .breed figure {
   height: 170px;
   cursor: pointer;
-  flex-basis: 20%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
 
 .top-searched-breeds .breed .breed-info {
   cursor: pointer;
-  flex-basis: 65%;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
 }
 
 /* styling for top10most page end here */
@@ -765,16 +821,26 @@ footer .logo a {  color: #fff;}
   .hero-section .introduction {  width: 85%;}
 
   .most-searched-breeds .cat-breeds {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .most-searched-breeds .cat-breed {
     margin: 0 0 40px 0;
-    flex-basis: 45%;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
   }
 
-  .why-to-have-a-cat .wrapper {  flex-direction: column;}
+  .why-to-have-a-cat .wrapper,
+  .cat-breed-info .wrapper {  
+    -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 
   .why-to-have-a-cat .cats-benefits {  padding-bottom: 60px;}
 
@@ -782,24 +848,36 @@ footer .logo a {  color: #fff;}
 
   /* styling for description page start here*/
 
-  .cat-breed-info .wrapper {  flex-direction: column;}
-
-  .cat-breed-info figure {  flex-basis: 0;}
+  .cat-breed-info figure {  
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+  }
 
   .cat-breed-info figure::before {  left: -3%;}
 
   .cat-breed-info .cat-breed-details {  padding: 60px 0;}
 
-  .breed-photos .photos {  justify-content: space-between;}
+  .breed-photos .photos {  
+    -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  }
 
-  .breed-photos .photo {  flex-basis: 45%;}
+  .breed-photos .photo {  
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
 
   /* styling for description page end here*/
 
   /* styling for top10most page start here*/
 
   .top-searched-breeds,
-  .top-searched-breeds .breed {  align-items: center;}
+  .top-searched-breeds .breed {  
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  }
 
   /* styling for top10most page end here*/
 
@@ -814,9 +892,16 @@ footer .logo a {  color: #fff;}
   footer .logo {  padding: 0 0 20px 0;}
 
   footer .wrapper-large {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .copyright {  position: static;}
@@ -835,7 +920,12 @@ footer .logo a {  color: #fff;}
     padding-bottom: 20px;
   }
 
-  .most-searched-breeds .discover-more {  flex-direction: column;}
+  .most-searched-breeds .discover-more {  
+    -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+          flex-direction: column;
+  }
 
   /* styling for homepage end here*/
 
@@ -843,7 +933,10 @@ footer .logo a {  color: #fff;}
 
   .top-searched-breeds .breed {
     padding-bottom: 85px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .cat-breed-info .rate {  width: 50px;}
@@ -851,7 +944,8 @@ footer .logo a {  color: #fff;}
   .top-searched-breeds .breed figure {
     width: 300px;
     height: 300px;
-    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
 
   /* styling for description end here*/
@@ -883,7 +977,33 @@ footer .logo a {  color: #fff;}
 
   .hero-section .search-field-btn {
     width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+  }
+
+  .hero-section .search-field-btn input[type=text]::-webkit-input-placeholder {
+    padding: 0 5%;
+    color: #000;
+    font-size: 18px;
+  }
+
+  .hero-section .search-field-btn input[type=text]::-moz-placeholder {
+    padding: 0 5%;
+    color: #000;
+    font-size: 18px;
+  }
+
+  .hero-section .search-field-btn input[type=text]:-ms-input-placeholder {
+    padding: 0 5%;
+    color: #000;
+    font-size: 18px;
+  }
+
+  .hero-section .search-field-btn input[type=text]::-ms-input-placeholder {
+    padding: 0 5%;
+    color: #000;
+    font-size: 18px;
   }
 
   .hero-section .search-field-btn input[type=text]::placeholder {
@@ -922,13 +1042,19 @@ footer .logo a {  color: #fff;}
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     float: right;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #e0e0e0;
     content: '\f00d';
     font-size: 21px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-indent: 0;
   }
 
@@ -940,11 +1066,18 @@ footer .logo a {  color: #fff;}
   /* styling for homepage end here*/
 
   /* styling for description start  here*/
-  .cat-breed-info .detail {  flex-direction: column;}
+  .cat-breed-info .detail {  
+    -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+          flex-direction: column;
+  }
 
   .cat-breed-info .ratings {
     padding: 10px 0;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 
   .cat-breed-info .rate {  width: 90px;}
@@ -954,7 +1087,7 @@ footer .logo a {  color: #fff;}
   /* styling for description end  here*/
 }
 
-/*media query for 425px starts here*/
+/*media query for 480px starts here*/
 
 @media only screen and (max-width: 480px) {
 
