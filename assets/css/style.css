@@ -509,7 +509,7 @@ header {  padding: 20px 0;}
 .active-breed::before,
 .cat-breed-info figure::before {
   width: 35px;
-  height: 150px;
+  height: 110px;
   border-radius: 20px;
   display: block;
   position: absolute;
