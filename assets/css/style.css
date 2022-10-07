@@ -748,6 +748,8 @@ header {  padding: 20px 0;}
   gap: 5%;
 }
 
+.top-searched-breeds .breed:hover { background: #e0e0e0;}
+
 .top-searched-breeds .breed figure {
   height: 170px;
   cursor: pointer;
@@ -940,7 +942,8 @@ footer .logo a {  color: #fff;}
             flex-direction: column;
   }
 
-  .cat-breed-info .rate {  width: 50px;}
+  .cat-breed-info .rate ,
+  .rate-active {  width: 50px;}
 
   .top-searched-breeds .breed figure {
     width: 300px;
