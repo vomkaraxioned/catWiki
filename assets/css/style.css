@@ -509,7 +509,7 @@ header {  padding: 20px 0;}
 .active-breed::before,
 .cat-breed-info figure::before {
   width: 35px;
-  height: 110px;
+  height: 150px;
   border-radius: 20px;
   display: block;
   position: absolute;
@@ -928,6 +928,10 @@ footer .logo a {  color: #fff;}
   /* styling for homepage end here*/
 
   /* styling for description start here*/
+
+  .most-searched-breeds .cat-breed figure:hover::before,
+  .active-breed::before,
+  .cat-breed-info figure::before { height: 110px;}
 
   .top-searched-breeds .breed {
     padding-bottom: 85px;
