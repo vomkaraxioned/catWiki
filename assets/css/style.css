@@ -1084,7 +1084,8 @@ footer .logo a {  color: #fff;}
             justify-content: flex-start;
   }
 
-  .cat-breed-info .rate {  width: 90px;}
+  .cat-breed-info .rate,
+  .rate-active {  width: 90px;}
 
   .breed-photos .photo {  height: 170px;}
 
