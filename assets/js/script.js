@@ -189,8 +189,7 @@ function showBreedDetails() {
         p = document.createElement("p"),
         ul = document.createElement("ul"),
         breed = document.URL.replace("%20", " ").split("?").pop(),
-        parameters = ["temperament", "life", "adaptability", "affection Level", "Child Friendly",
-            "Grooming", "Intelligence", "Health Issues", "Social Needs", "Stranger Friendly"];
+        parameters = ["temperament", "origin", "life span", "adaptability", "affection Level", "Child Friendly", "Grooming", "Intelligence", "Health Issues", "Social Needs", "Stranger Friendly"];
     let breedInfo, values;
     for (x in result) {
         if (breed == result[x].name) {
@@ -198,7 +197,7 @@ function showBreedDetails() {
         }
     }
     if (breedInfo) {
-        values = [breedInfo.temperament, breedInfo.life_span, breedInfo.adaptability, breedInfo.affection_level, breedInfo.child_friendly, breedInfo.grooming, breedInfo.intelligence, breedInfo.health_issues, breedInfo.social_needs, breedInfo.stranger_friendly];
+        values = [breedInfo.temperament, breedInfo.origin, breedInfo.life_span, breedInfo.adaptability, breedInfo.affection_level, breedInfo.child_friendly, breedInfo.grooming, breedInfo.intelligence, breedInfo.health_issues, breedInfo.social_needs, breedInfo.stranger_friendly];
         div.classList.add("cat-breed-details");
         h2.classList.add("title");
         p.classList.add("description");
@@ -227,7 +226,7 @@ function showBreedDetails() {
                 }
                 li.appendChild(ul);
             } else {
-                if (x == 1) {
+                if (x == 2) {
                     li.innerText = values[x] + "\tYears";
                 } else {
                     li.innerText = "\t" + values[x];
