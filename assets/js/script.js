@@ -8,11 +8,11 @@ let result, searchInput;
 const searchField = document.querySelector(".search-field"),
     breedDetails = document.querySelector(".cat-breed-info .wrapper"),
     searchBtn = document.querySelector(".search-field-btn"),
-    topSearch = document.querySelector(".top-searched-breeds");
+    topSearch = document.querySelector(".top-searched-breeds"),
     url = "https://api.thecatapi.com/v1/breeds",
-    xmlHttpObj = new XMLHttpRequest();    
+    xmlHttpObj = new XMLHttpRequest();
 
-//moreImages function in which data is get for  gallery images parameters url(string),breedInfo(obj)
+//moreImages function in which data is fetched for  gallery images parameters url(string),breedInfo(obj)
 
 function moreImages(apiUrl, breedInfo) {
     const xmlHttpObj = new XMLHttpRequest();
@@ -128,8 +128,8 @@ function addTopSearch() {
     topSearch.innerHTML = "";
     while (i < limit) {
         const li = document.createElement("li"),
-            figure = document.createElement("figure");
-        img = document.createElement("img"),
+            figure = document.createElement("figure"),
+            img = document.createElement("img"),
             div = document.createElement("div"),
             h3 = document.createElement("h3"),
             p = document.createElement("p");
@@ -182,8 +182,8 @@ function addPhotos(breedInfo, images, check) {
 
 function showBreedDetails() {
     breedDetails.innerHTML = "";
-    const figure = document.createElement("figure");
-    img = document.createElement("img"),
+    const figure = document.createElement("figure"),
+        img = document.createElement("img"),
         div = document.createElement("div"),
         h2 = document.createElement("h2"),
         p = document.createElement("p"),
@@ -242,9 +242,9 @@ function showBreedDetails() {
         div.appendChild(ul);
         breedDetails.appendChild(figure);
         breedDetails.appendChild(div);
-        moreImages("https://api.thecatapi.com/v1/images/search?limit=8&name=" + breed, breedInfo);
+        moreImages("https://api.thecatapi.com/v1/images/search?limit=8&" + breed, breedInfo);
     } else {
-        breedDetails.innerHTML = err;
+        breedDetails.innerText = err;
     }
 }
 
@@ -262,7 +262,7 @@ function modal() {
     modal.appendChild(div);
     modal.children[1].children[0].addEventListener("keyup", suggest);
     modal.addEventListener("click", function (e) {
-        if (e.target == this.children[0]) {
+        if (e.target == this.children[0] || e.target == modal) {
             document.body.removeChild(modal);
             document.children[0].classList.remove("remove-scroll");
         }
@@ -276,7 +276,7 @@ function modal() {
 function loadElements() {
     if (searchField) {
         addSummary();
-        let inputBox = searchField.children[0];
+        const inputBox = searchField.children[0];
         searchInput = searchField.innerHTML;
         inputBox.addEventListener("keyup", suggest);
     }
